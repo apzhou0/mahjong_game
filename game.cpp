@@ -24,6 +24,7 @@ Game::Game() {
           Tile t (special, j);
           deck.push_back(t);
           count++;
+          count++;
         }
     }
 }
