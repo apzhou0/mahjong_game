@@ -6,15 +6,18 @@
 class Tile {
     public: 
       Tile (char s, int v) : suit (s), value (v) {}
+      char getSuit() {return suit;}
+      char getValue() {return value;}
       bool operator==(const Tile &t); 
       bool operator<(const Tile &t); 
-      bool operator>(const Tile &t);
-      void printTile() { std::cout << "[" << suit << value << "]"; }
-      std::string tileToString();
+      std::string tileContent();
+      void printTile();  
+      
       
     private: 
       char suit;
       int value;
+      std::string tileToString();
 };
 
 #endif
