@@ -7,27 +7,23 @@
 
 class Player {
     public: 
-      Player(std::vector<Tile> h) : hand(h), tripleCount(0) {}
-      void printHand();
-      void printDiscards();
-      void printExposed();
+      Player(std::vector<Tile> h) : hand(h) {}
+      void printHand() const;
+      void printDiscards() const;
+      void printExposed() const;
       void sortHand();
       void drawTile(Tile t);
       void discard(std::string s);
-      /*bool pong(Tile t); tripleCount++
-      bool chow(Tile t); tripleCount++ */
-      bool hasWon();
-
-
+      bool canPong(Tile t) const;
+      bool pong(Tile t);
+      bool chow(Tile t);
+      bool hasWon() const;
       
     private: 
       std::vector<Tile> hand;
       std::vector<Tile> discards;
       std::vector<Tile> exposed;
-      bool canPong(Tile t);
-      bool canChow(Tile t);
-      bool hasPair();
-      int tripleCount;
+      bool isStraight(Tile t1, Tile t2, Tile t3) const;
 };
 
 #endif
