@@ -5,19 +5,19 @@
 
 class Tile {
     public: 
-      Tile (char s, int v) : suit (s), value (v) {}
-      char getSuit() {return suit;}
-      char getValue() {return value;}
-      bool operator==(const Tile &t); 
-      bool operator<(const Tile &t); 
-      std::string tileContent();
-      void printTile();  
+      Tile (char s = '-', int v = 0) : suit (s), value (v) {}
+      char getSuit() const {return suit;}
+      char getValue() const {return value;}
+      bool operator==(const Tile &t) const; 
+      bool operator<(const Tile &t) const; 
+      std::string tileContent() const;
+      std::string tileToString() const;
+      void printTile() const;  
       
       
     private: 
       char suit;
       int value;
-      std::string tileToString();
 };
 
 #endif

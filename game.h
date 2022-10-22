@@ -8,14 +8,14 @@ class Game {
     public: 
       Game();
       ~Game();
-      void printDeck();
       void play();
  
     private: 
       std::vector<Tile> deck;
       Player *opponent;
       Player *realUser;
-      bool gameOver;
+      void printDeck();
+      bool gameOver();
 };
 
 #endif

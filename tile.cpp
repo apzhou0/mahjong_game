@@ -1,7 +1,7 @@
 #include <iostream>
 #include "tile.h"
 
-std::string Tile::tileContent() {
+std::string Tile::tileContent() const {
     std::string converted = "";
     if (suit != 'z') {
         converted = suit + std::to_string(value);
@@ -30,21 +30,21 @@ std::string Tile::tileContent() {
     return converted;
 }
 
-std::string Tile::tileToString() {
+std::string Tile::tileToString() const {
     return "[" + tileContent() + "]";
 }
 
-void Tile::printTile() { 
+void Tile::printTile() const { 
     std::cout << tileToString(); 
 }
 
-bool Tile::operator==(const Tile &t) {
+bool Tile::operator==(const Tile &t) const {
     return suit == t.suit && value == t.value;
 }
 
-bool Tile::operator<(const Tile &t) {
-    if (suit == t.suit) {
+bool Tile::operator<(const Tile &t) const {
+    if (this->suit == t.suit) {
         return value < t.value;
     }
-    return suit < t.suit;
+    return this->suit < t.suit;
 }
